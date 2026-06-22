@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>875直播 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f4f0eb;
+            color: #2b2a27;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 40px 0 60px;
+        }
+
+        /* --- hero --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: #fffbf7;
+            border-radius: 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+            margin-bottom: 48px;
+            border: 1px solid #e8e1d7;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #3b3a36;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #7f7a72;
+            display: block;
+            margin-top: 6px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #5e5a53;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 12px;
+        }
+
+        .hero .site-link {
+            display: inline-block;
+            margin-top: 24px;
+        }
+
+        .hero .site-link a {
+            text-decoration: none;
+            background: #2b2a27;
+            color: #faf6f0;
+            padding: 10px 32px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-block;
+        }
+
+        .hero .site-link a:hover {
+            background: #47443f;
+        }
+
+        /* --- 通用卡片区块 --- */
+        .section-card {
+            background: #fcf9f5;
+            border-radius: 28px;
+            padding: 40px 36px;
+            margin-bottom: 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #eae3da;
+        }
+
+        .section-card h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #3f3b35;
+            border-left: 4px solid #b8a99b;
+            padding-left: 18px;
+            margin-bottom: 24px;
+        }
+
+        .section-card p {
+            margin-bottom: 18px;
+            color: #3f3b35;
+        }
+
+        .section-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link a {
+            color: #5f5a51;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c6bba9;
+            font-weight: 500;
+        }
+
+        .inline-link a:hover {
+            color: #2b2824;
+            text-decoration-color: #2b2824;
+        }
+
+        /* --- 引述块 / 提示框 --- */
+        .callout {
+            background: #f1ece4;
+            border-left: 6px solid #b8a99b;
+            padding: 20px 24px;
+            margin: 28px 0 16px;
+            border-radius: 12px;
+            color: #3c3832;
+            font-size: 0.95rem;
+        }
+
+        .callout strong {
+            color: #2b2823;
+        }
+
+        /* --- 特点列表（内联描述） --- */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px 30px;
+            margin-top: 12px;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #f4efe7;
+            padding: 18px 16px;
+            border-radius: 20px;
+            border: 1px solid #e1d8cd;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #3a3631;
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #5f5950;
+        }
+
+        /* --- FAQ 摘要 --- */
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px dashed #ddd5ca;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3d3933;
+            margin-bottom: 4px;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #625b52;
+        }
+
+        /* --- 底部 --- */
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.85rem;
+            color: #807a6f;
+            border-top: 1px solid #e0d7cb;
+        }
+
+        .footer-note a {
+            color: #5f5a51;
+            text-decoration: none;
+            border-bottom: 1px solid #cdc2b3;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #5f5a51;
+        }
+
+        /* --- 响应式 --- */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-card {
+                padding: 28px 20px;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding: 40px 16px 36px;
+            }
+
+            .callout {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>875直播 <small>内容站点 · 日常陪伴</small></h1>
+        <p>一个围绕直播与互动内容的轻量信息站，提供频道导航、节目提示与社区氛围。这里是兴趣落脚的角落。</p>
+        <div class="site-link">
+            <a href="https://show-857.com">875直播</a>
+        </div>
+    </div>
+
+    <!-- 介绍+可信说明 -->
+    <div class="section-card">
+        <h2>关于这个站点</h2>
+        <p>
+            <span class="inline-link"><a href="https://show-857.com">875直播</a></span> 是一个以直播内容索引与信息聚合为主的个人站点。
+            它不追逐流量，也不套用模板化的导流逻辑，而是尝试用更干净的方式把直播相关的节目表、频道动态以及社区话题整理在一起。
+            站点的内容来源以公开信息与用户自发整理为主，尽量保持客观与可溯性。
+        </p>
+        <p>
+            如果你偶尔想看看某个直播间今晚有什么安排，或者想了解近期的活动排期，这里或许能帮你省去一些翻找的时间。
+            站内没有浮窗广告，也没有强制跳转，整体更接近一份可翻阅的「直播手帐」。
+        </p>
+        <div class="callout">
+            <strong>一点说明：</strong> 站内所有链接与信息均来自公开渠道，不涉及盗播、付费推广或虚假数据。
+            运营者会定期核对内容，但无法保证每一条动态都实时更新——毕竟直播世界的节奏很快。
+        </div>
+    </div>
+
+    <!-- 特点 / 优势区（差异化叙述） -->
+    <div class="section-card">
+        <h2>日常顺手能用的小工具</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>📋 节目简表</h3>
+                <p>以列表方式整理近期直播安排，方便提前规划观看时间。没有弹窗干扰。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🧩 信息聚合</h3>
+                <p>把分散在社交平台、粉丝群里的公告汇总到一个页面，减少信息遗漏。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔗 直达链接</h3>
+                <p>每个频道都附有官方或常用地址，一键跳转，省去搜索环节。</p>
+            </div>
+            <div class="feature-item">
+                <h3>📌 社区氛围</h3>
+                <p>保留了一些用户投稿的观赛笔记与互动话题，更像一个可读的小社区。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 场景 / 说明区（用引述块代替机械列表） -->
+    <div class="section-card">
+        <h2>什么时候会用到它</h2>
+        <p>
+            比如周末晚上想找个直播间放松，但不确定哪个频道正在播什么——打开 <span class="inline-link"><a href="https://show-857.com">875直播</a></span> 扫一眼简表就好。
+            又或者你关注的主播临时改了时段，站内的公告区通常会比社交平台更快被整理出来。
+        </p>
+        <p>
+            如果你是那种喜欢提前做计划的人，站内的「近期看点」板块可以帮你标记感兴趣的内容。
+            不需要注册，也不需要登录，打开页面就能获取信息。
+        </p>
+        <div class="callout">
+            💡 <strong>小提示：</strong> 站内部分链接会跳转到外部直播平台，建议在稳定的网络环境下使用。
+            另外，由于各平台规则不同，某些频道地址可能会不定期变动，如果遇到打不开的情况，可以稍后再试或通过站内反馈渠道告知。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要（自然口语化） -->
+    <div class="section-card">
+        <h2>常见疑问 · 简短回答</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">这个站和官方直播平台是什么关系？</div>
+            <div class="faq-a">没有隶属关系。它是一个爱好者维护的信息索引站，只做整理和导航，不托管视频流。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">内容多久更新一次？</div>
+            <div class="faq-a">主要跟着节目安排走，一般每周会更新 2~3 次。遇到大型活动或节日会视情况补充。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我能在这里投稿或反馈吗？</div>
+            <div class="faq-a">现阶段通过站内留言区或社交账号私信都可以，运营者看到后会回复。没有自动客服，但回复还算及时。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面很简洁，会一直保持这样吗？</div>
+            <div class="faq-a">是的，简洁是站点的风格方向。不会突然加入弹窗或视频广告，也不打算做复杂会员体系。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-note">
+        更多信息请移步 <a href="https://show-857.com">875直播</a> · 页面内容仅供参考，不构成任何形式的引导或承诺。
+    </div>
+
+</div>
+</body>
+</html>
